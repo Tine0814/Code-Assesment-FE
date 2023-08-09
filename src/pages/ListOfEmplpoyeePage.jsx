@@ -8,7 +8,9 @@ const ListOfEmplpoyeePage = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:4000/api/attendance");
+        const response = await fetch(
+          "https://code-assesment-be.vercel.app/api/attendance/"
+        );
         const data = await response.json();
         setEmployees(data);
       } catch (error) {
@@ -22,7 +24,7 @@ const ListOfEmplpoyeePage = () => {
   const handleTimeInUpdate = async (employeeId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/attendance/${employeeId}`,
+        `https://code-assesment-be.vercel.app/api/attendance/${employeeId}`,
         {
           method: "PUT",
           headers: {
