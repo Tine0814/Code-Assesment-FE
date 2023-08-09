@@ -56,7 +56,7 @@ const ModalComponent = ({ onClick }) => {
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
         <motion.div
           className="realtive min-w-[30vw] min-h-[60vh] flex flex-col items-center bg-[#FFFFEB] rounded-lg "
-          animate={{ scale: [0, 1.5, 1] }}
+          animate={{ scale: [0, 1.2, 1] }}
           transition={{
             duration: 1.4,
             ease: "easeInOut",
