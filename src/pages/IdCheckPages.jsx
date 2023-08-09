@@ -21,7 +21,7 @@ const IdCheckPages = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/employee/${employeeId}`
+        `https://code-assesment-be.vercel.app/api/employee/${employeeId}`
       );
 
       if (!response.ok) {
@@ -30,13 +30,16 @@ const IdCheckPages = () => {
         const employee = await response.json();
 
         try {
-          const response = await fetch("http://localhost:4000/api/attendance", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(employee),
-          });
+          const response = await fetch(
+            "https://code-assesment-be.vercel.app/api/attendance",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(employee),
+            }
+          );
 
           if (response.ok) {
             const json = await response.json();

@@ -63,7 +63,7 @@ const ListOfEmplpoyeePage = () => {
   const handleTimeOutUpdate = async (employeeId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/attendance/${employeeId}`,
+        `https://code-assesment-be.vercel.app/api/attendance/${employeeId}`,
         {
           method: "PUT",
           headers: {

@@ -25,13 +25,16 @@ const ModalComponent = ({ onClick }) => {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/api/employee/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://code-assesment-be.vercel.app/api/employee",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         setSubmitted(true);
