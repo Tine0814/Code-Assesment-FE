@@ -25,10 +25,10 @@ const IdCheckPages = () => {
       );
 
       if (!response.ok) {
-        alert("ID does not exist");
+        setError("ID does not exist");
       } else {
         const employee = await response.json();
-
+        setError("");
         try {
           const response = await fetch(
             "https://code-assesment-be.vercel.app/api/attendance",
