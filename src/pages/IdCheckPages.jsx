@@ -8,6 +8,7 @@ const IdCheckPages = () => {
   const [employeeId, setEmployeeId] = useState("");
   const [error, setError] = useState("");
   const [modal, setModal] = useState(false);
+  const [check, setChecking] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -20,12 +21,15 @@ const IdCheckPages = () => {
     }
 
     try {
+      setChecking(true);
+
       const response = await fetch(
         `https://code-assesment-be.vercel.app/api/employee/${employeeId}`
       );
 
       if (!response.ok) {
         setError("ID does not exist");
+        setChecking(false);
       } else {
         const employee = await response.json();
         setError("");
@@ -105,7 +109,7 @@ const IdCheckPages = () => {
               type="submit"
               className="text-white w-full bg-[#EA1179]  font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 "
             >
-              Submit
+              {check ? "Checking...." : "Submit"}
             </motion.button>
           </form>
         </div>
